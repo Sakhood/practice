@@ -1,0 +1,44 @@
+an_en <- new.env()
+an_en 
+an_en[['pp']] <- c(23:33)
+an_en[['pp']]
+an_en$dd <- polyroot(c(33:38))
+an_en$dd
+assign(
+  'monday',
+  weekdays(as.Date('2020/11/02')),
+  an_en
+)
+get('monday',an_en)
+ls(an_en)
+exists('aa',an_en)
+a_list <- as.list(an_en)
+a_list
+as.environment(a_list)
+list2env(a_list)
+a <<- c(1:9)
+get('a',envir = globalenv())
+ls(envir = baseenv())
+formals(gcd)
+args(gcd)
+formalArgs(gcd)
+bbb <- body(gcd)
+bbb
+deparse(bbb)
+normalize <- function(x,m = mean(x),s = sd(x)){
+  (x - m) / s
+}
+ed <- normalize(c(1,3,5,7,8))
+ed
+mean(ed)
+sd(ed)
+normalize(c(NA,1,2,4))
+do.call(gcd , list(x= 99,y = 3))
+fff <- ecdf(rnorm(50))
+is.function(fff)
+fff(1)
+cs <- c()
+for (i in 1:10){
+  cs <- c(cs,runif(1))
+}
+cs
